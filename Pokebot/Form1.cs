@@ -49,10 +49,7 @@ namespace Pokebot
 
         private void DumpWRAMFile(object sender, EventArgs e)
         {
-            if (chk_AutoUpdate.Checked)
-            {
-                VBAController.MemDump();
-            }
+            VBAController.MemDump();
         }
 
         private void UpdateWRAMFile(object sender, EventArgs e)
@@ -80,7 +77,7 @@ namespace Pokebot
         {
             if (IsTalking())
             {
-                VBAController.UserControl_A();
+                //VBAController.UserControl_A();
             }
         }
 
@@ -174,6 +171,11 @@ namespace Pokebot
                     }
                 }
             }
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+
         }
 
         private void button4_Click(object sender, EventArgs e)

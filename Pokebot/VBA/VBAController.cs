@@ -214,9 +214,5 @@ namespace Pokebot
         }
 
         #endregion
-
-
-
-
     }
 }
