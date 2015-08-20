@@ -70,8 +70,16 @@
     <Compile Include="Memory\MemoryTools.cs" />
     <Compile Include="Memory\MemoryTracker.cs" />
     <Compile Include="Memory\PRedWRam.cs" />
+    <Compile Include="Memory\SpriteSetData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Utility\Debug.cs" />
+    <Compile Include="Utility\MemoryAddresses.cs" />
+    <Compile Include="Utility\RefreshingListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\SessionData.cs" />
     <Compile Include="VBA\VBAController.cs" />
     <Compile Include="VBA\WindowsAPI.cs" />
     <Compile Include="Memory\WRamFile.cs" />

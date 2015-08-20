@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokebot.Utility;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -51,7 +52,12 @@ namespace Pokebot.Memory
 
         public void AddDump()
         {
-            RecentMemoryDumps.Add(new WRamFile(FileLocation));
+            try {
+                RecentMemoryDumps.Add(new WRamFile(FileLocation));
+            } catch (Exception e) {
+                Debug.Log("WRam file unable to load");
+                return;
+            }
             while (RecentMemoryDumps.Count > MaxDumps)
             {
                 RecentMemoryDumps.RemoveAt(0);

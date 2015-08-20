@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.tab_MainView = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbl_Test = new System.Windows.Forms.Label();
+            this.grp_Player = new System.Windows.Forms.GroupBox();
+            this.txt_PlayerPositionY = new System.Windows.Forms.TextBox();
+            this.txt_MapID = new System.Windows.Forms.TextBox();
+            this.txt_PlayerPositionX = new System.Windows.Forms.TextBox();
+            this.lbl_MapID = new System.Windows.Forms.Label();
+            this.lbl_PlayerPosition = new System.Windows.Forms.Label();
+            this.lbl_TalkingState = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_RemoveSame = new System.Windows.Forms.Button();
             this.btn_RemoveChanged = new System.Windows.Forms.Button();
@@ -39,30 +48,122 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tab_Log = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grp_Sprites = new System.Windows.Forms.GroupBox();
+            this.list_Sprites = new RefreshingListBox();
             this.tab_MainView.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.grp_Player.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.grp_Sprites.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_MainView
             // 
             this.tab_MainView.Controls.Add(this.tabPage2);
             this.tab_MainView.Controls.Add(this.tabPage1);
+            this.tab_MainView.Controls.Add(this.tab_Log);
             this.tab_MainView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_MainView.Location = new System.Drawing.Point(0, 24);
             this.tab_MainView.Name = "tab_MainView";
             this.tab_MainView.SelectedIndex = 0;
             this.tab_MainView.Size = new System.Drawing.Size(601, 772);
             this.tab_MainView.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grp_Sprites);
+            this.tabPage2.Controls.Add(this.lbl_Test);
+            this.tabPage2.Controls.Add(this.grp_Player);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(593, 746);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Data";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Test
+            // 
+            this.lbl_Test.AutoSize = true;
+            this.lbl_Test.Location = new System.Drawing.Point(112, 384);
+            this.lbl_Test.Name = "lbl_Test";
+            this.lbl_Test.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Test.TabIndex = 7;
+            this.lbl_Test.Text = "lbl_Test";
+            // 
+            // grp_Player
+            // 
+            this.grp_Player.Controls.Add(this.txt_PlayerPositionY);
+            this.grp_Player.Controls.Add(this.txt_MapID);
+            this.grp_Player.Controls.Add(this.txt_PlayerPositionX);
+            this.grp_Player.Controls.Add(this.lbl_MapID);
+            this.grp_Player.Controls.Add(this.lbl_PlayerPosition);
+            this.grp_Player.Controls.Add(this.lbl_TalkingState);
+            this.grp_Player.Location = new System.Drawing.Point(8, 6);
+            this.grp_Player.Name = "grp_Player";
+            this.grp_Player.Size = new System.Drawing.Size(238, 267);
+            this.grp_Player.TabIndex = 6;
+            this.grp_Player.TabStop = false;
+            this.grp_Player.Text = "Player";
+            // 
+            // txt_PlayerPositionY
+            // 
+            this.txt_PlayerPositionY.Location = new System.Drawing.Point(101, 49);
+            this.txt_PlayerPositionY.Name = "txt_PlayerPositionY";
+            this.txt_PlayerPositionY.Size = new System.Drawing.Size(39, 20);
+            this.txt_PlayerPositionY.TabIndex = 7;
+            this.txt_PlayerPositionY.Text = "0";
+            // 
+            // txt_MapID
+            // 
+            this.txt_MapID.Location = new System.Drawing.Point(43, 23);
+            this.txt_MapID.Name = "txt_MapID";
+            this.txt_MapID.Size = new System.Drawing.Size(39, 20);
+            this.txt_MapID.TabIndex = 7;
+            this.txt_MapID.Text = "0";
+            // 
+            // txt_PlayerPositionX
+            // 
+            this.txt_PlayerPositionX.Location = new System.Drawing.Point(56, 49);
+            this.txt_PlayerPositionX.Name = "txt_PlayerPositionX";
+            this.txt_PlayerPositionX.Size = new System.Drawing.Size(39, 20);
+            this.txt_PlayerPositionX.TabIndex = 7;
+            this.txt_PlayerPositionX.Text = "0";
+            // 
+            // lbl_MapID
+            // 
+            this.lbl_MapID.AutoSize = true;
+            this.lbl_MapID.Location = new System.Drawing.Point(6, 26);
+            this.lbl_MapID.Name = "lbl_MapID";
+            this.lbl_MapID.Size = new System.Drawing.Size(31, 13);
+            this.lbl_MapID.TabIndex = 6;
+            this.lbl_MapID.Text = "Map:";
+            // 
+            // lbl_PlayerPosition
+            // 
+            this.lbl_PlayerPosition.AutoSize = true;
+            this.lbl_PlayerPosition.Location = new System.Drawing.Point(6, 52);
+            this.lbl_PlayerPosition.Name = "lbl_PlayerPosition";
+            this.lbl_PlayerPosition.Size = new System.Drawing.Size(47, 13);
+            this.lbl_PlayerPosition.TabIndex = 6;
+            this.lbl_PlayerPosition.Text = "Position:";
+            // 
+            // lbl_TalkingState
+            // 
+            this.lbl_TalkingState.AutoSize = true;
+            this.lbl_TalkingState.Location = new System.Drawing.Point(60, 210);
+            this.lbl_TalkingState.Name = "lbl_TalkingState";
+            this.lbl_TalkingState.Size = new System.Drawing.Size(35, 13);
+            this.lbl_TalkingState.TabIndex = 5;
+            this.lbl_TalkingState.Text = "label1";
             // 
             // tabPage1
             // 
@@ -169,25 +270,15 @@
             this.listBox1.Size = new System.Drawing.Size(295, 420);
             this.listBox1.TabIndex = 0;
             // 
-            // tabPage2
+            // tab_Log
             // 
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(593, 894);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Data";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.tab_Log.Location = new System.Drawing.Point(4, 22);
+            this.tab_Log.Name = "tab_Log";
+            this.tab_Log.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Log.Size = new System.Drawing.Size(593, 746);
+            this.tab_Log.TabIndex = 2;
+            this.tab_Log.Text = "Log";
+            this.tab_Log.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -233,6 +324,25 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // grp_Sprites
+            // 
+            this.grp_Sprites.Controls.Add(this.list_Sprites);
+            this.grp_Sprites.Location = new System.Drawing.Point(252, 6);
+            this.grp_Sprites.Name = "grp_Sprites";
+            this.grp_Sprites.Size = new System.Drawing.Size(333, 267);
+            this.grp_Sprites.TabIndex = 8;
+            this.grp_Sprites.TabStop = false;
+            this.grp_Sprites.Text = "Sprites";
+            // 
+            // list_Sprites
+            // 
+            this.list_Sprites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.list_Sprites.FormattingEnabled = true;
+            this.list_Sprites.Location = new System.Drawing.Point(3, 16);
+            this.list_Sprites.Name = "list_Sprites";
+            this.list_Sprites.Size = new System.Drawing.Size(327, 248);
+            this.list_Sprites.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,17 +350,19 @@
             this.ClientSize = new System.Drawing.Size(601, 796);
             this.Controls.Add(this.tab_MainView);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.chk_AutoUpdate);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Pokemon Red Bot";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tab_MainView.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.grp_Player.ResumeLayout(false);
+            this.grp_Player.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grp_Sprites.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,16 +380,25 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox chk_AutoUpdate;
         private System.Windows.Forms.Button btn_RemoveChanged;
         private System.Windows.Forms.Button btn_RemoveSame;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_TalkingState;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.TabPage tab_Log;
+        private System.Windows.Forms.GroupBox grp_Player;
+        private System.Windows.Forms.TextBox txt_PlayerPositionY;
+        private System.Windows.Forms.TextBox txt_PlayerPositionX;
+        private System.Windows.Forms.Label lbl_PlayerPosition;
+        private System.Windows.Forms.TextBox txt_MapID;
+        private System.Windows.Forms.Label lbl_MapID;
+        private System.Windows.Forms.Label lbl_Test;
+        private System.Windows.Forms.GroupBox grp_Sprites;
+        private RefreshingListBox list_Sprites;
     }
 }
 
