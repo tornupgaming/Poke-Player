@@ -62,7 +62,9 @@ namespace Pokebot.Bot {
         }
 
         public void Update() {
-
+            if(Talking == TalkState.Middle || Talking == TalkState.End) {
+                VBAController.UserControl_B();
+            }
         }
 
         private MemoryTracker GetT(int address) {
