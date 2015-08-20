@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 namespace Pokebot.Memory {
     public class SpriteSetData {
 
+        private const byte MovementStationary = 0x00ff;
+        private const byte MovementRandom = 0x00fe;
+
         public int Index;
         public int AddressHead;
 
@@ -62,7 +65,28 @@ namespace Pokebot.Memory {
         }
 
         public override string ToString() {
-            return string.Format("Sprite {0}: Pixels ({3},{4}) / Steps ({1},{2})", Index, XPositionSteps.LastValue, YPositionSteps.LastValue, XPositionPixels.LastValue, YPositionPixels.LastValue);
+            if(PictureID.LastValue > 0) {
+                return string.Format("{0} - Sprite {1}: Position ({2},{3})", Index, PictureID.LastValue, PositionX, PositionY);
+            }
+            return string.Format("{0}", Index);
+        }
+
+        public int PositionX {
+            get {
+                return XPositionSteps.LastValue - 4;
+            }
+        }
+
+        public int PositionY {
+            get {
+                return YPositionSteps.LastValue - 4;
+            }
+        }
+
+        public bool IsRandomMovement {
+            get {
+                return MovementByte.LastValue == MovementRandom;
+            }
         }
     }
 }
