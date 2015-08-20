@@ -1,4 +1,5 @@
-﻿using Pokebot.Memory;
+﻿using Pokebot.Bot;
+using Pokebot.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace Pokebot.Utility {
         public static bool IsAutoTracking = true;
 
         public static MemoryTools Memory;
+        public static PokemonRedBot Bot;
     }
 }

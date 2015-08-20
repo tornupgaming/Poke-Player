@@ -10,10 +10,11 @@ using System.IO;
 using System.Windows.Forms;
 using Pokebot.Memory;
 using Pokebot.Utility;
+using Pokebot.Bot;
 
 namespace Pokebot {
     public partial class Form1 : Form {
-        MemoryTracker m_TalkTrackerA, m_TalkTrackerB, m_PlayerXTracker, m_PlayerYTracker, m_MapIDTracker;
+        MemoryTracker m_TalkTrackerA, m_TalkTrackerB, m_MapIDTracker;
         BindingList<SpriteSetData> m_SpriteData;
 
 
@@ -26,11 +27,12 @@ namespace Pokebot {
             SessionData.Memory.OnMemoryChanged += OnMemoryChanged;
             SessionData.Memory.CheckForNewDump();
 
+            SessionData.Bot = new PokemonRedBot();
+            SessionData.Bot.InitTrackers();
+
             m_TalkTrackerA = SessionData.Memory.GetTracker(MemoryAddresses.TalkingA);
             m_TalkTrackerB = SessionData.Memory.GetTracker(MemoryAddresses.TalkingB);
 
-            m_PlayerXTracker = SessionData.Memory.GetTracker(MemoryAddresses.PlayerXPosition);
-            m_PlayerYTracker = SessionData.Memory.GetTracker(MemoryAddresses.PlayerYPosition);
             m_MapIDTracker = SessionData.Memory.GetTracker(MemoryAddresses.CurrentMapID);
 
             m_SpriteData = new BindingList<SpriteSetData>();
@@ -71,23 +73,18 @@ namespace Pokebot {
                     listBox1.Items.Add(tracker);
                 }
             }
-            UpdateTalking();
-            list_Sprites.DataSource = m_SpriteData;
+            SessionData.Bot.Update();
             list_Sprites.RefreshItems();
+
+            lbl_TalkingState.Text = SessionData.Bot.Talking.ToString();
         }
 
         private void UpdateTalking() {
-            if (IsTalking()) {
-                lbl_TalkingState.Text = "Talking";
-            } else {
-                lbl_TalkingState.Text = "Not Talking";
-            }
+            
 
-            txt_PlayerPositionX.Text = m_PlayerXTracker.LastValue.ToString();
-            txt_PlayerPositionY.Text = m_PlayerYTracker.LastValue.ToString();
+            txt_PlayerPositionX.Text = SessionData.Bot.PlayerXPosition.ToString();
+            txt_PlayerPositionY.Text = SessionData.Bot.PlayerYPosition.ToString();
             txt_MapID.Text = m_MapIDTracker.LastValue.ToString();
-            string str = string.Empty;
-            lbl_Test.Text = str;
         }
 
         public bool IsTalking() {

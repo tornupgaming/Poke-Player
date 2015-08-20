@@ -12,20 +12,23 @@ namespace Pokebot.Utility {
         public const int TalkingA = 0xD0B7 - WRamOffset;
         public const int TalkingB = 0xD358 - WRamOffset;
 
-        public const int PlayerXPosition = 0xD362 - WRamOffset;
-        public const int PlayerYPosition = 0xD361 - WRamOffset;
 
-        public const int CurrentMapID = 0xD35E - WRamOffset;
+
+        public const int CurrentMapID = 0x135E;
+        public const int CurrentTileBlockMapViewPointerA = 0x135F;
+        public const int CurrentTileBlockMapViewPointerB = 0x1360;
+        public const int PlayerYPosition = 0x1361;
+        public const int PlayerXPosition = 0x1362;
+
+        public const int CurrentMapHeight = 0x1368;
+        public const int CurrentMapWidth = 0x1369;
+
+        public const int CurrentMapDataPointerA = 0x136A;
+        public const int CurrentMapDataPointerB = 0x136B;
 
         public const int MapTextPointerA = 0xD36C - WRamOffset;
         public const int MapTextPointerB = 0xD36D - WRamOffset;
 
-        public const int PlayerPictureID = 0x0100; // 0xC100
-        public const int PlayerMovementStatus = 0x0101; // 0xC101
-        public const int PlayerSpriteImageIndex = 0x0102; // 0xC102
-        public const int PlayerYScreenPosDelta = 0x0103; // 0xC103
-        public const int PlayerYScreenPos = 0x0104; // 0xC104
-        public const int PlayerXScreenPosDelta = 0x0105; // 0xC105
-        public const int PlayerXScreenPos = 0x0106; // 0xC106
+
     }
 }
